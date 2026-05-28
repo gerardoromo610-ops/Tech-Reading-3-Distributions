@@ -9,12 +9,10 @@
 
 using namespace std;
 
-// Función auxiliar para imprimir líneas divisorias
 void printLine(int n, char c = '-') {
     cout << string(n, c) << "\n";
 }
 
-// HANDS-ON 1: Regresión Lineal Simple (Caso de Verificación)
 void handsOn1() {
     cout << "  HANDS-ON 1: REGRESIÓN LINEAL SIMPLE (VERIFICACIÓN)\n";
     
@@ -41,11 +39,9 @@ void handsOn1() {
     cout << "Verificación: Para X=3, Y_pred = " << b0 + b1 * 3 << " (Esperado: 6)\n";
 }
 
-// HANDS-ON 2: Regresión Lineal Simple (Caso Benetton)
 void handsOn2() {
     cout << "  HANDS-ON 2: REGRESIÓN LINEAL SIMPLE (CASO BENETTON)\n";
     
-    // Datos reales de Displayr para el caso Benetton (en millones)
     vector<double> adv = {43.60, 50.44, 59.01, 66.30, 82.36, 92.15, 100.51, 110.06, 111.51};
     vector<double> sales = {1261.08, 1475.28, 1657.52, 2059.05, 2303.76, 2512.64, 2751.46, 2787.67, 2939.13};
     int n = adv.size();
@@ -81,7 +77,6 @@ void handsOn2() {
     cout << "  Coeficiente de Determinación (R^2) = " << r2 << " (" << r2*100 << "%)\n";
 }
 
-// HANDS-ON 3: Tabla de Frecuencias Simples
 void handsOn3() {
     cout << "  HANDS-ON 3: TABLA DE FRECUENCIAS SIMPLES\n";
     
@@ -111,11 +106,9 @@ void handsOn3() {
     cout << "Total de observaciones (n) = " << n << "\n";
 }
 
-// HANDS-ON 4 & 5: Tabla de Frecuencias Extendida y Medidas de Tendencia Central
 void handsOn4y5() {
     cout << "  HANDS-ON 4 & 5: TABLA EXTENDIDA Y MEDIDAS GRUPALES\n";
     
-    // Dataset de 35 números continuos
     vector<double> data = {
         12.5, 14.2, 15.0, 15.5, 16.1, 16.8, 17.2, 17.8, 18.0, 18.3,
         18.8, 19.1, 19.5, 19.9, 20.2, 20.5, 20.9, 21.3, 21.7, 22.1,
@@ -128,7 +121,6 @@ void handsOn4y5() {
     double maxVal = data.back();
     double range = maxVal - minVal;
     
-    // Regla de Sturges: k = 1 + 3.322 * log10(n) -> para n=35, k ≈ 6
     int k = 6;
     double amplitude = range / k;
     
@@ -199,7 +191,6 @@ void handsOn4y5() {
     }
     printLine(75, '=');
     
-    // Medidas de Tendencia Central
     double meanG = sumFXc / n;
     
     double halfN = n / 2.0;
@@ -235,20 +226,19 @@ void handsOn4y5() {
     cout << "  Moda Grupal (Mo)       = " << modeG << "\n";
 }
 
-// HANDS-ON 6: Probabilidades en Matriz de Contingencia
 void handsOn6() {
     cout << "  HANDS-ON 6: PROBABILIDADES EN MATRIZ DE CONTINGENCIA\n";
     
-    double n_AB = 7;   // Nublado y Llueve
-    double n_ABp = 2;  // Nublado y No Llueve
-    double n_ApB = 3;  // No Nublado y Llueve
-    double n_ApBp = 6; // No Nublado y No Llueve
+    double n_AB = 7;  
+    double n_ABp = 2;  
+    double n_ApB = 3;  
+    double n_ApBp = 6;
     
-    double total_A = n_AB + n_ABp;    // 9
-    double total_Ap = n_ApB + n_ApBp; // 9
-    double total_B = n_AB + n_ApB;    // 10
-    double total_Bp = n_ABp + n_ApBp; // 8
-    double grandTotal = total_A + total_Ap; // 18
+    double total_A = n_AB + n_ABp;    
+    double total_Ap = n_ApB + n_ApBp; 
+    double total_B = n_AB + n_ApB;    
+    double total_Bp = n_ABp + n_ApBp; 
+    double grandTotal = total_A + total_Ap; 
     
     cout << "Matriz de Contingencia Registrada:\n";
     cout << "                  Llueve (B)  No Llueve (B')  Total\n";
